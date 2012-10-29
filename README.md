@@ -4,6 +4,12 @@ Inspired in https://github.com/rigoneri/syte
 
 Sinatra version
 
+# How is works
+
+# Run the server
+
+thin start -p 3000 -R config.ru
+
 ## License
 
 
