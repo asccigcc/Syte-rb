@@ -1,8 +1,18 @@
-# To use with thin 
-#  thin start -p PORT -R config.ru
+# this rackup file is used to run the application
+# when run via the Thin rack interace 
 
-require File.join(File.dirname(__FILE__), 'lib', 'syte-rb.rb')
+require 'rubygems'
+require 'sinatra'
 
-disable :run
-set :environment, :production
-run Syte-rb
+# we need to manually specify where our views live
+views_path = File.join(File.dirname(__FILE__), 'views')
+ 
+Sinatra::Base.set( 
+  :views => views_path, 
+  :run => false, 
+  :env => :production 
+) 
+
+# then load and run the application
+require './lib/syte-rb.rb'
+run Syte_rb

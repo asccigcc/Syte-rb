@@ -1,0 +1,15 @@
+---
+     environment: production
+     chdir: "/usr/share/nginx/www/syte-rb"
+     address: 127.0.0.1
+     user: root
+     group: admin
+     port: 4567
+     pid: "/usr/share/nginx/www/syte-rb/config/thin.pid"
+     rackup: "/usr/share/nginx/www/syte-rb/config.ru"
+     log: "/usr/share/nginx/www/syte-rb/log/thin.log"
+     max_conns: 1024
+     timeout: 30
+     servers: 1
+     max_persistent_conns: 512
+     daemonize: false
