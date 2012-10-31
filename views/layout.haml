@@ -1,0 +1,14 @@
+!!! 5
+%html
+ %head
+  %title
+   = @title
+ 
+ %body
+  
+  = haml :_header, :locals => { :bar => "foo" }
+  
+  %div
+   = yield
+
+  = haml :_footer, :locals => { :bar => "foo" }

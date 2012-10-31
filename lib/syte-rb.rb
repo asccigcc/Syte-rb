@@ -5,32 +5,22 @@
 # TODO: Rspec tests
 # TODO: database interaction
 
-# require the basic gems needed
-# for sinatra
-
 APP_ROOT = File.expand_path(File.join(File.dirname(__FILE__), '..'))
 
+# require the basic gems needed
+# for sinatra
 require 'rubygems'
 require 'sinatra'
 require 'haml'
 
-# require some sample helpers
-#require 'helpers'
 
-# require some sample middleware
-#require 'middleware'
-
-#use SampleRackMiddleware
 
 # our static assets are stored in the public directory
 #set :public, "public"
+set :haml, :format => :html5
 
-# configure directives can be used to set constants
-# that are available in each of your views
-configure do
-  Sample = "test"
-  Version = Sinatra::VERSION
-end
+# load config file
+Dir[File.join(APP_ROOT, 'config', '*.rb')].each { |file| require file }
 
 # before directives run before all the views
 before do
@@ -38,13 +28,13 @@ before do
   @version = Version
 end
 
-class Syte_rb < Sinatra::Application
 
-  set :root, APP_ROOT
+# load helpers
+Dir[File.join(APP_ROOT, 'helpers', '*.rb')].each { |file| require file }
 
-  get '/' do
-    haml :/
-  end
+# require some sample middleware
+Dir[File.join(APP_ROOT, 'middleware', '*.rb')].each { |file| require file }
+#use SampleRackMiddleware
 
-
-end
+# load controllers
+Dir[File.join(APP_ROOT, 'controllers', '*.rb')].each { |file| require file }

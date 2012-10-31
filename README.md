@@ -6,6 +6,27 @@ Sinatra version
 
 # How is works
 
+Firts you only need is run the bundle
+
+$ bundle install
+
+After finish, can configure the api key in the enviroment.rb
+
+# config/enviroment.rb
+
+Example Facebook
+
+You need to indicate if will be use this api
+FACEBOOK_INTEGRATION_ENABLED = true
+
+Next you need to create a facebook app and puts the key in this vars
+
+FACEBOOK_KEY    = '[ENTER FACEBOOK_KEY, SEE FACEBOOK APP SETUP INSTRUCTIONS]'
+FACEBOOK_SECRET = '[ENTER TWITTER USER SECRET HERE, SEE TWITTER SETUP INSTRUCTIONS]'
+
+After you finish search the id of you profile or page and put here
+FACEBOOK_ID     = '[ENTER PAGE OR PROFILE ID, SEE FACEBOOK SETUP INSTRUCTIONS]'
+
 # Run the server
 
 thin start -p 3000 -R config.ru
