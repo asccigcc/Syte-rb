@@ -12,6 +12,9 @@ APP_ROOT = File.expand_path(File.join(File.dirname(__FILE__), '..'))
 require 'rubygems'
 require 'sinatra'
 require 'haml'
+require 'coffee-script'
+require 'sass'
+
 
 
 
@@ -30,11 +33,11 @@ end
 
 
 # load helpers
-Dir[File.join(APP_ROOT, 'helpers', '*.rb')].each { |file| require file }
+Dir[File.join(APP_ROOT, 'app/helpers', '*.rb')].each { |file| require file }
 
 # require some sample middleware
-Dir[File.join(APP_ROOT, 'middleware', '*.rb')].each { |file| require file }
+Dir[File.join(APP_ROOT, 'app/middleware', '*.rb')].each { |file| require file }
 #use SampleRackMiddleware
 
 # load controllers
-Dir[File.join(APP_ROOT, 'controllers', '*.rb')].each { |file| require file }
+Dir[File.join(APP_ROOT, 'app/controllers', '*.rb')].each { |file| require file }

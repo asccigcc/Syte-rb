@@ -4,7 +4,7 @@ class Syte_rb < Sinatra::Application
 
 	get '/' do
 		@title = "Title"
-	  @string = Sample
+		@string = Sample
 		haml :index
 	end  	
 

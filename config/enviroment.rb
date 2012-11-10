@@ -1,11 +1,13 @@
 # configure directives can be used to set constants
 # that are available in each of your views
 configure do
-  Sample = "test"
+
+  # Global vars
+  Sample = "Test"
   Version = Sinatra::VERSION
 
   # Syte social networks api keys
-  #Blog Integration: Tumblr
+  # Blog Integration: Tumblr
   TUMBLR_BLOG_URL = '[ENTER TUMBLR BLOG URL] ex. rigoneri.tumblr.com'
   #TUMBLR_API_URL = 'http://api.tumblr.com/v2/blog/{0}'.format(TUMBLR_BLOG_URL)
   TUMBLR_API_KEY = '[ENTER TUMBLR API KEY HERE, SEE TUMBLR SETUP INSTRUCTIONS]'
@@ -31,7 +33,8 @@ configure do
   # Behance Integration
   BEHANCE_INTEGRATION = true
   BEHANCE_TOKEN = '[ENTER BEHANCE_TOKEN, SEE BEHANCE SETUP INSTRUCTIONS]'
-  #Github Integration
+  
+  # Github Integration
   GITHUB_INTEGRATION_ENABLED = true
   GITHUB_API_URL = 'https://api.github.com/'
   GITHUB_ACCESS_TOKEN = '[ENTER GITHUB ACCESS TOKEN HERE, SEE GITHUB SETUP INSTRUCTIONS]'
@@ -77,18 +80,14 @@ configure do
   #Google Analytics
   GOOGLE_ANALYTICS_TRACKING_ID = ''
 
-
   #Woopra
   WOOPRA_TRACKING_DOMAIN = ''
   WOOPRA_TRACKING_IDLE_TIMEOUT = 300000  # 5 minutes
   WOOPRA_TRACKING_INCLUDE_QUERY = false
 
-
-
   #Disqus Integration
   DISQUS_INTEGRATION_ENABLED = false
   DISQUS_SHORTNAME = ''
-
 
   #Lastfm Integration
   LASTFM_INTEGRATION_ENABLED = true
@@ -100,7 +99,6 @@ configure do
   SOUNDCLOUD_API_URL = 'https://api.soundcloud.com/'
   SOUNDCLOUD_CLIENT_ID = '[ENTER SOUNDCLOUD APPLICATION CLIENT_ID HERE]'
   SOUNDCLOUD_SHOW_ARTWORK = FalsetrueOUNDCLOUD_PLAYER_COLOR = 'ff912b'
-
 
   #Bitbucket Integration
   BITBUCKET_INTEGRATION_ENABLED = true

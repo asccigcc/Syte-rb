@@ -9,7 +9,7 @@ Bundler.require
 
 # we need to manually specify where our views live
 
-views_path 		= File.join(File.dirname(__FILE__), 'views')
+views_path 		= File.join(File.dirname(__FILE__), 'app/views')
  
 Sinatra::Base.set( 
   :views 			=> views_path, 
